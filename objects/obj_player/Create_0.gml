@@ -46,7 +46,7 @@ death = false // If death animation has started
 did_death = false
 
 gun_frame = 0
-gun_animation_speed = .2
+gun_animation_speed = .3
 gun_animation_max = 5
 gun_fired = false
 gun_shot = false

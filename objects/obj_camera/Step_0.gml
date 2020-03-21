@@ -10,8 +10,8 @@ if !obj_player.scope_key{
 	
 	possible_new_target_y = target.y-25*obj_player.on_ground
 	
-	if abs(possible_new_target_y - target_y) > 50 || (obj_player.on_ground && !prev_on_ground){
-		if abs(possible_new_target_y - target_y) > 50{
+	if abs(possible_new_target_y - target_y) > 80 || (obj_player.on_ground && !prev_on_ground){
+		if abs(possible_new_target_y - target_y) > 80{
 			follow_camera = true
 		}
 		

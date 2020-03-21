@@ -3,7 +3,7 @@ if target = noone || target.death{
 }
 if state = crab_attack{
 	var mask = mask_index
-	if !(image_index >= 2 && image_index <= 15){
+	if !(image_index >= 1 && image_index <= 16){
 		exit
 	}
 	damage = 1

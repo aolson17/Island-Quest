@@ -71,7 +71,7 @@ if move = sign(xsp){ // If trying to move in the same direction as momentum
 
 
 
-if !place_meeting(x,y+1,par_solid){ // Apply gravity
+if !place_meeting(x,y+1,par_solid) || state = crab_die{ // Apply gravity
 	ysp += grav_speed
 }else{ // If on ground
 	if move != sign(xsp) || abs(xsp) > max_move_speed{ // Apply friction
@@ -104,12 +104,13 @@ if move = sign(xsp) && move != 0 && place_meeting(x,y+1,par_solid){
 
 if state != crab_die{
 	scr_collision()
+	scr_crab_attacks()
 }else{
 	x += xsp
 	y += ysp
 	xsp*=.98
 }
-scr_crab_attacks()
+
 
 
 
