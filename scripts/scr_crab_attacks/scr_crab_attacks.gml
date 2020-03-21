@@ -42,11 +42,13 @@ if state = crab_attack{
 			target.invincible = true
 			target.state = hurt
 			target.alarm[0] = obj_player.invincibility_frames
-			target.xsp += sign(target.x-x)*knockback
-			target.ysp -= 3
+			target.xsp = sign(target.x-x)*knockback
+			target.ysp = -3
 			target.hp -= damage
 			var success = true
 		}
-		obj_camera.shake += shake
+		if success{
+			obj_camera.shake += shake
+		}
 	}
 }

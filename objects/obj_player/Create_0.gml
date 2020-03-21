@@ -62,15 +62,15 @@ enum guns{
 }
 gun = guns.pistol
 gun_length[guns.pistol] = 24
-gun_damage[guns.pistol] = 1
+gun_damage[guns.pistol] = 3
 gun_shots[guns.pistol] = 1
-gun_auto[guns.pistol] = true
-gun_fire_rate[guns.pistol] = 10
+gun_auto[guns.pistol] = false
+gun_fire_rate[guns.pistol] = 50
 gun_accuracy[guns.pistol] = 10
 gun_max_recoil[guns.pistol] = 35
 gun_recoil[guns.pistol] = 5
 gun_recoil_recovery[guns.pistol] = .3
-gun_knockback[guns.pistol] = 2
+gun_knockback[guns.pistol] = 4
 gun_scope[guns.pistol] = false
 gun_scope_power[guns.pistol] = 18
 gun_backwards_accuracy_offset[guns.pistol] = 15

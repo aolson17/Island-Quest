@@ -167,7 +167,7 @@ if attack_cooldown <= 0{
 }
 
 if state = run || state = stand || state = jump || state = fall{
-	if ((shoot_key&&gun_auto[gun])||(shoot_key_pressed&&!gun_auto[gun])) && can_shoot = 0{
+	if ((attack_key&&gun_auto[gun])||(attack_key_pressed&&!gun_auto[gun])) && can_shoot = 0 && shoot_key{
 		can_shoot += gun_fire_rate[gun]
 		obj_camera.shake += 6
 		if gun != guns.shotgun{

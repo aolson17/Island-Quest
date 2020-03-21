@@ -5,10 +5,10 @@ if place_meeting((x+xsp),(y),par_solid){
 		if !applied_knockback{
 			if object_is_ancestor(col.object_index, par_character){
 				applied_knockback = true
-				xsp = sign(x-col.x)*touch_knockback
+				//xsp = sign(x-col.x)*touch_knockback
 				if col.object_index = obj_crab && !obj_player.invincible{
-					obj_camera.shake += 10
-					obj_player.hp -= obj_crab.damage
+					//obj_camera.shake += 10
+					//obj_player.hp -= obj_crab.damage
 					obj_player.invincible = true
 					obj_player.alarm[0] = obj_player.invincibility_frames
 					//var sound = audio_play_sound(snd_shotgun,0,0)
@@ -64,8 +64,8 @@ if place_meeting((x),(y+ysp),par_solid){
 				applied_knockback = true
 				ysp = sign(y-col.y)*touch_knockback
 				if col.object_index = obj_crab && !obj_player.invincible{
-					obj_camera.shake += 10
-					obj_player.hp -= obj_crab.damage
+					//obj_camera.shake += 10
+					//obj_player.hp -= obj_crab.damage
 					obj_player.invincible = true
 					obj_player.alarm[0] = obj_player.invincibility_frames
 					//var sound = audio_play_sound(snd_shotgun,0,0)
