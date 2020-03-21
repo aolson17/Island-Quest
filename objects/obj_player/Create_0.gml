@@ -42,6 +42,9 @@ slide_cooldown = false
 attack_cooldown_frames = 20
 attack_cooldown = 0
 
+death = false // If death animation has started
+did_death = false
+
 gun_frame = 0
 gun_animation_speed = .2
 gun_animation_max = 5

@@ -1,11 +1,11 @@
 
 move = right_key-left_key
 
-if hp <= 0{
+/*if hp <= 0{
 	if !played_death_sound{
 		played_death_sound = true
-		var sound = audio_play_sound(snd_death,0,0)
-		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
+		//var sound = audio_play_sound(snd_death,0,0)
+		//audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 	}
 	dead_time--
 	if dead_time <= 0{ // Respawn
@@ -21,7 +21,7 @@ if hp <= 0{
 	if dead_time < dead_time_max{
 		dead_time++
 	}
-}
+}*/
 
 on_ground = place_meeting(x,y+1,par_solid)
 
