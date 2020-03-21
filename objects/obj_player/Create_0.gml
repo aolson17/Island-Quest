@@ -42,13 +42,22 @@ slide_cooldown = false
 attack_cooldown_frames = 20
 attack_cooldown = 0
 
+gun_frame = 0
+gun_animation_speed = .2
+gun_animation_max = 8
+gun_fired = false
+gun_shot = false
+
+gun_x = x
+gun_y = y
+
 coyote_jump_frames = 5 // How many frames after falling off ground player can still jump
 coyote_jump = false // If the player can jump despite not being on ground
 
 queue_jump_frames = 5 // How many frames before landing can the player press the jump key and still jump after landing
 queue_jump = false // If the player will jump after landing
 
-muzzle_flash_frames = 1 // How many frames to show muzzle flash
+muzzle_flash_frames = 3 // How many frames to show muzzle flash
 flash = false
 
 on_ground = false

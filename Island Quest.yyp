@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "0e1f3e08-54bf-4206-b67e-29da9ac46659",
+            "Value": {
+                "id": "57003eba-aa53-4cc2-b853-bf10e2496bf7",
+                "resourcePath": "sprites\\spr_muzzle_flash\\spr_muzzle_flash.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "11f47055-0de7-414d-acc0-1521f71e5581",
             "Value": {
                 "id": "b4afdc31-7568-46af-ae89-20ec43f7ca24",
@@ -268,14 +276,6 @@
                 "id": "b64b487c-39b6-426b-9745-d5e3c36e004e",
                 "resourcePath": "objects\\obj_crab\\obj_crab.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "3f37f9fb-491e-42d1-9ec8-bba4428f6153",
-            "Value": {
-                "id": "dbfd73b5-ad98-4e5f-bc5d-39bc95d16e3f",
-                "resourcePath": "sprites\\spr_captain_popgun\\spr_captain_popgun.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -575,6 +575,14 @@
             }
         },
         {
+            "Key": "79a65cee-f37b-4ce1-9bf5-cf8998e64ed0",
+            "Value": {
+                "id": "33f3a356-5b70-48c7-a152-9e4ee2652bbd",
+                "resourcePath": "sprites\\spr_captain_popgun\\spr_captain_popgun.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7e1c1414-1cbc-4e75-bd27-41583c92adb1",
             "Value": {
                 "id": "1f0745f8-dd1c-4599-80e8-94e3de81a7dd",
@@ -687,6 +695,14 @@
             }
         },
         {
+            "Key": "8ed6a46a-7e26-4354-a348-135ec9dd3601",
+            "Value": {
+                "id": "1aed8609-c61d-40d4-a2c4-746a91a4f7e2",
+                "resourcePath": "sprites\\spr_captain_reloading\\spr_captain_reloading.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "91603e23-c88f-4bed-b0d4-2912cb05aa14",
             "Value": {
                 "id": "e422836f-2299-4ea7-8044-0315d7b81807",
@@ -791,6 +807,14 @@
             }
         },
         {
+            "Key": "ad1f804a-fc68-4f16-885a-fde886c44520",
+            "Value": {
+                "id": "e9f89d9f-fb6e-47e7-83e6-b1aa481d7b17",
+                "resourcePath": "scripts\\reloading\\reloading.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ae1fc512-126c-47f3-b3c1-ed7b1aedea73",
             "Value": {
                 "id": "979175a2-d90e-4567-b2a1-19a8fece1f53",
@@ -812,6 +836,14 @@
                 "id": "bdd40fd7-1d43-4d68-a4ff-9f548d3de44e",
                 "resourcePath": "views\\b28b5d5f-c8ac-4535-882d-c53b01912f49.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b326c2e3-2dd0-4f6a-b2cd-4f42c7dd3c00",
+            "Value": {
+                "id": "43126a98-d6d0-4699-aa85-a6f435f06dee",
+                "resourcePath": "scripts\\aiming\\aiming.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -895,14 +927,6 @@
             }
         },
         {
-            "Key": "ce5936d5-c8d0-436c-abf2-a6147ed96fd4",
-            "Value": {
-                "id": "cce82f1a-1311-49a2-ac9e-e37bf3089253",
-                "resourcePath": "sprites\\spr_captain_popgun_strip4\\spr_captain_popgun_strip4.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "cf669f68-1131-4e2c-98f3-efd212b783c9",
             "Value": {
                 "id": "3336ff7c-9b27-4eea-b8db-8862d2cc442e",
@@ -980,6 +1004,14 @@
                 "id": "ba8fbf90-96ac-4539-b441-6f5780c41832",
                 "resourcePath": "views\\e0cba684-ce43-439b-ae97-ba679f2c9412.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e1c558e0-63a0-4094-a94b-044fa3a3a768",
+            "Value": {
+                "id": "c2e1165f-deb0-417e-af70-9d27dcfa8b28",
+                "resourcePath": "sprites\\spr_captain_popgun_still\\spr_captain_popgun_still.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1127,6 +1159,8 @@
         "fc6d34e1-45d1-4006-9b17-ef82653aa8cb",
         "c626b611-b340-4431-9ac9-6c9b57dd5f12",
         "32419266-d0a5-4ca7-b967-c7f86160b039",
+        "b326c2e3-2dd0-4f6a-b2cd-4f42c7dd3c00",
+        "ad1f804a-fc68-4f16-885a-fde886c44520",
         "8d00f73c-d48a-4b95-b941-55313ddef606",
         "9a0bbbf6-0b91-47b8-82f1-e4aafe45fdb8",
         "4030f5c4-a5f1-49b6-be78-c1e37a9fc80a",

@@ -26,12 +26,9 @@ if hp <= 0{
 on_ground = place_meeting(x,y+1,par_solid)
 
 // Don't sprint while scoped
-if scope_key{
-	sprint_key = false
-}
 
 if on_ground{
-	if state = knocked || global.in_dialogue || hp<=0{
+	if state = knocked || global.in_dialogue || hp<=0 || state = aiming{
 		move = 0
 		move_speed = 0
 		max_move_speed = 0
@@ -166,83 +163,42 @@ if attack_cooldown <= 0{
 	attack_cooldown--
 }
 
-if state = run || state = stand || state = jump || state = fall{
-	if ((attack_key&&gun_auto[gun])||(attack_key_pressed&&!gun_auto[gun])) && can_shoot = 0 && shoot_key{
-		can_shoot += gun_fire_rate[gun]
+if gun_fired{
+	if !gun_shot && gun_frame >= 4{
+		gun_shot = true
 		obj_camera.shake += 6
-		if gun != guns.shotgun{
-			//var sound = audio_play_sound(snd_laser,0,0)
-		}else{
-			//var sound = audio_play_sound(snd_shotgun,0,0)
-		}
+		//var sound = audio_play_sound(snd_shotgun,0,0)
 		//audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
-		repeat(gun_shots[gun]){ // Shoot multple times if it should
-			var bullet = instance_create_layer(x+lengthdir_x(gun_length[gun],aim_dir),y-2+lengthdir_y(gun_length[gun],aim_dir),"Bullets",obj_bullet)
-			//var dir_range = gun_accuracy[gun]+current_recoil+current_gun_backwards_accuracy_offset
-			var dir_offset = 0//random(dir_range)-(dir_range)/2
-			bullet.xsp = lengthdir_x(gun_bullet_speed[gun],aim_dir+dir_offset)+xsp
-			bullet.ysp = lengthdir_y(gun_bullet_speed[gun],aim_dir+dir_offset)+ysp
-			bullet.image_angle = aim_dir+dir_offset
-		}
-		if on_ground{
-			xsp += lengthdir_x(-gun_knockback[gun],aim_dir+dir_offset)
-		}else{
-			xsp += lengthdir_x(-gun_knockback[gun]*.25,aim_dir+dir_offset)
-		}
-		ysp += lengthdir_y(-gun_knockback[gun]*.25,aim_dir+dir_offset)
+		xsp += lengthdir_x(-gun_knockback[gun],aim_dir)
+		ysp += lengthdir_y(-gun_knockback[gun]*.25,aim_dir)
 		flash = true
 		alarm[1] = muzzle_flash_frames
-		
-		// Apply recoil
-		current_recoil+=gun_recoil[gun]
-		if current_recoil > gun_max_recoil[gun]{
-			current_recoil = gun_max_recoil[gun]
-		}
-		
+		var bullet = instance_create_layer(x+lengthdir_x(gun_length[gun],aim_dir),y+lengthdir_y(gun_length[gun],aim_dir),"Bullets",obj_bullet)
+		bullet.xsp = lengthdir_x(gun_bullet_speed[gun],aim_dir)+xsp
+		//bullet.ysp = lengthdir_y(gun_bullet_speed[gun],aim_dir)+ysp
+		bullet.image_angle = aim_dir
+	}
+	gun_frame += gun_animation_speed
+	if gun_frame > gun_animation_max{
+		gun_fired = false
+		state = reloading
 	}
 }
 
-if !global.in_dialogue{
-	if mouse_wheel_down(){
-		var sound = audio_play_sound(snd_weapon_switch,0,0)
-		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
-		gun--
-		if gun <0{
-			gun=2
-		}
-	}else if mouse_wheel_up(){
-		var sound = audio_play_sound(snd_weapon_switch,0,0)
-		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
-		gun++
-		if gun >2{
-			gun=0
-		}
+if state = run || state = stand{
+	if shoot_key{
+		state = aiming
 	}
-	if keyboard_check_pressed(ord("1")){
-		var sound = audio_play_sound(snd_weapon_switch,0,0)
-		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
-		gun = guns.pistol
-	}
-	if keyboard_check_pressed(ord("3")){
-		var sound = audio_play_sound(snd_weapon_switch,0,0)
-		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
-		gun = guns.shotgun
-	}
-	if keyboard_check_pressed(ord("2")){
-		var sound = audio_play_sound(snd_weapon_switch,0,0)
-		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
-		gun = guns.rifle
-	}
-	
-	if !got_rifle{
-		if gun = guns.rifle{
-			gun = guns.pistol
-		}
-	}
-	if !got_shotgun{
-		if gun = guns.shotgun{
-			gun = guns.pistol
-		}
+}
+
+if state = aiming{
+	if ((attack_key&&gun_auto[gun])||(attack_key_pressed&&!gun_auto[gun])) && can_shoot = 0 && shoot_key{
+		can_shoot += gun_fire_rate[gun]
+		gun_fired = true
+		gun_frame = 0
+		gun_shot = false
+		
+		
 	}
 }
 

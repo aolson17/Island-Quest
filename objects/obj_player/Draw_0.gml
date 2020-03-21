@@ -43,9 +43,9 @@ if hp>0{
 		draw_sprite_ext(spr_player_head,0,head_pos_x,head_pos_y,image_xscale,image_yscale,image_angle,color_offset,image_alpha)
 	}*/
 	
-	
-	//scr_draw_arm()
-	
+	if state = aiming{
+		scr_draw_arm()
+	}
 	
 }else{ // If dead
 	
