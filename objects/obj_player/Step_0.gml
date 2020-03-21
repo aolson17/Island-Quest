@@ -36,13 +36,8 @@ if on_ground{
 		move_speed = 0
 		max_move_speed = 0
 	}else{
-		if !sprint_key{
-			move_speed = run_speed
-			max_move_speed = max_run_speed
-		}else{
-			move_speed = sprint_speed
-			max_move_speed = max_sprint_speed
-		}
+		move_speed = run_speed
+		max_move_speed = max_run_speed
 	}
 }else{
 	move_speed = air_move_factor*run_speed
@@ -145,32 +140,46 @@ if scope_key && !global.in_dialogue{
 }
 
 // Increase innacuracy when shooting backward
-if face = 1 && (abs(angle_difference(aim_dir,0)) > 90){
+/*if face = 1 && (abs(angle_difference(aim_dir,0)) > 90){
 	current_gun_backwards_accuracy_offset = ((abs(angle_difference(aim_dir,0))-90)/90)*gun_backwards_accuracy_offset[gun]
 }else if face = -1 && (abs(angle_difference(aim_dir,180)) > 90){
 	current_gun_backwards_accuracy_offset = ((abs(angle_difference(aim_dir,180))-90)/90)*gun_backwards_accuracy_offset[gun]
 }else{
 	current_gun_backwards_accuracy_offset = 0
-}
+}*/
+current_gun_backwards_accuracy_offset = 0
 
 if can_shoot > 0{
 	can_shoot--
 }
 
+if attack_cooldown <= 0{
+	if attack_key_pressed{
+		if state = stand || state = run{
+			state = attack
+		}else if state = fall || state = jump{
+			state = attack_air
+		}
+		attack_cooldown = attack_cooldown_frames
+	}
+}else{
+	attack_cooldown--
+}
+
 if state = run || state = stand || state = jump || state = fall{
-	if ((attack_key&&gun_auto[gun])||(attack_key_pressed&&!gun_auto[gun])) && can_shoot = 0{
+	if ((shoot_key&&gun_auto[gun])||(shoot_key_pressed&&!gun_auto[gun])) && can_shoot = 0{
 		can_shoot += gun_fire_rate[gun]
 		obj_camera.shake += 6
 		if gun != guns.shotgun{
-			var sound = audio_play_sound(snd_laser,0,0)
+			//var sound = audio_play_sound(snd_laser,0,0)
 		}else{
-			var sound = audio_play_sound(snd_shotgun,0,0)
+			//var sound = audio_play_sound(snd_shotgun,0,0)
 		}
-		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
+		//audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 		repeat(gun_shots[gun]){ // Shoot multple times if it should
 			var bullet = instance_create_layer(x+lengthdir_x(gun_length[gun],aim_dir),y-2+lengthdir_y(gun_length[gun],aim_dir),"Bullets",obj_bullet)
-			var dir_range = gun_accuracy[gun]+current_recoil+current_gun_backwards_accuracy_offset
-			var dir_offset = random(dir_range)-(dir_range)/2
+			//var dir_range = gun_accuracy[gun]+current_recoil+current_gun_backwards_accuracy_offset
+			var dir_offset = 0//random(dir_range)-(dir_range)/2
 			bullet.xsp = lengthdir_x(gun_bullet_speed[gun],aim_dir+dir_offset)+xsp
 			bullet.ysp = lengthdir_y(gun_bullet_speed[gun],aim_dir+dir_offset)+ysp
 			bullet.image_angle = aim_dir+dir_offset
@@ -241,3 +250,4 @@ script_execute(state) // Manage which state is active
 
 applied_knockback = false
 scr_collision()
+scr_player_attacks()

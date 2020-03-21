@@ -1,6 +1,14 @@
 
 
 
+var heart_y = y-height/2 + 10
+var heart_x1 = x-width/2+10
+var heart_x2 = x-width/2+20
+var heart_x3 = x-width/2+30
+
+draw_sprite(spr_HUD_heart,target.hp>0,heart_x1,heart_y)
+draw_sprite(spr_HUD_heart,target.hp>1,heart_x2,heart_y)
+draw_sprite(spr_HUD_heart,target.hp>2,heart_x3,heart_y)
 
 /*draw_sprite_ext(spr_hud,0,x-width/2,y-height/2,2,2,0,c_white,1)
 

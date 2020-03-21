@@ -1,24 +1,16 @@
 
-max_hp = 99
+max_hp = 3
 hp = max_hp
 
 got_rifle = false
 got_shotgun = false
-
-checkpoint = noone
-checkpoint_x = x
-checkpoint_y = y
 
 dead_time_max = 90
 dead_time = dead_time_max
 played_death_sound = false
 
 run_speed = .1
-sprint_speed = .2
 max_run_speed = 2
-max_sprint_speed = 3
-crouch_walk_speed = .08
-max_crouch_walk_speed = 1
 
 move_friction = .5
 slide_friction = .05
@@ -40,14 +32,15 @@ jump_speed = 6
 variable_jump_factor = .5
 
 run_image_speed_factor = .4 // How much run speed effects the animation speed
-crouch_image_speed_factor = .2 // How much crouch speed effects the animation speed
-sprint_image_speed_factor = .1 // How much run speed effects the animation speed
 
 invincibility_frames = 15
 invincible = false
 
 slide_cooldown_frames = 60
 slide_cooldown = false
+
+attack_cooldown_frames = 20
+attack_cooldown = 0
 
 coyote_jump_frames = 5 // How many frames after falling off ground player can still jump
 coyote_jump = false // If the player can jump despite not being on ground
@@ -81,7 +74,7 @@ gun_knockback[guns.pistol] = 2
 gun_scope[guns.pistol] = false
 gun_scope_power[guns.pistol] = 18
 gun_backwards_accuracy_offset[guns.pistol] = 15
-gun_bullet_speed[guns.pistol] = 25
+gun_bullet_speed[guns.pistol] = 18
 
 gun_length[guns.shotgun] = 24
 gun_damage[guns.shotgun] = .5
@@ -119,8 +112,6 @@ current_gun_backwards_accuracy_offset = 0
 
 can_shoot = 0
 current_recoil = 0
-
-sheathed = true
 
 state = stand
 
