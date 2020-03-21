@@ -205,5 +205,7 @@ if state = aiming{
 script_execute(state) // Manage which state is active
 
 applied_knockback = false
-scr_collision()
-scr_player_attacks()
+if !death{
+	scr_collision()
+	scr_player_attacks()
+}

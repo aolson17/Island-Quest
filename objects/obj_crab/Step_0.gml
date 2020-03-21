@@ -18,6 +18,7 @@ if instance_number(obj_player)>0{
 		target = obj_player
 	}
 }
+if target.hp <= 0{target = noone}
 
 if state != crab_attack && state != stagger_state && state != dead_state && state != crab_defend && target != noone{
 	if target.x < x{

@@ -8,7 +8,7 @@ if invincible{
 	color_offset = c_red
 }
 
-if hp>0{
+if !death{
 	draw_sprite_ext(sprite_index,image_index,(x),round(y),image_xscale,image_yscale,image_angle,color_offset,image_alpha)
 	
 	if face = 1{
@@ -51,7 +51,7 @@ if hp>0{
 	
 	
 	
-	draw_sprite(spr_player_death,0,x,y)
+	
 	
 	
 }

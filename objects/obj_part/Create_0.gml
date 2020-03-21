@@ -6,5 +6,5 @@ image_index = 1
 
 rsp = choose(1,-1)
 
-xsp = -3
-ysp = -3
+xsp = random_range(-3,3)
+ysp = random_range(-4,-2)

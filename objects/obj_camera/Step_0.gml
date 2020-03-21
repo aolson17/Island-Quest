@@ -59,9 +59,10 @@ if shake > 0{
 x += spd_factor*(target_x-x+shake_offset_x)
 y += spd_factor*(target_y-y+shake_offset_y)
 
-camera_set_view_pos(camera, (x-zoom_width/2), (y-zoom_height/2))
-camera_set_view_angle(camera,shake_offset_r)
-camera_set_view_size(camera,zoom_width,zoom_height)
-
+//if !obj_player.death{
+	camera_set_view_pos(camera, (x-zoom_width/2), (y-zoom_height/2))
+	camera_set_view_angle(camera,shake_offset_r)
+	camera_set_view_size(camera,zoom_width,zoom_height)
+//}
 layer_x("Background",x*.8)
 layer_y("Background",y*.8)
