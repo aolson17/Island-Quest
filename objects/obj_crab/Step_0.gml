@@ -16,9 +16,9 @@ target = noone
 if instance_number(obj_player)>0{
 	if scr_target(sight_range,sight_up,sight_down,obj_player,false){
 		target = obj_player
+		if target.hp <= 0{target = noone}
 	}
 }
-if target.hp <= 0{target = noone}
 
 if state != crab_attack && state != stagger_state && state != dead_state && state != crab_defend && target != noone{
 	if target.x < x{
