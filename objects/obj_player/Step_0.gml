@@ -154,7 +154,7 @@ if can_shoot > 0{
 }
 
 if attack_cooldown <= 0{
-	if attack_key_pressed{
+	if attack_key_pressed &&  !shoot_key {
 		if state = stand || state = run{
 			state = attack
 		}else if state = fall || state = jump{

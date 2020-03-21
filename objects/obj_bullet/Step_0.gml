@@ -76,7 +76,7 @@ if (col_1 != noone || col_2 != noone || col_3 != noone){
 			ds_list_add(obj_text.text_life,0)
 			ds_list_add(obj_text.text_color,c_white)
 			ds_list_add(obj_text.text_dir,sign(xsp)*random(1))
-			sprite_index = spr_blood
+			sprite_index = spr_flash
 			xsp = 0
 			ysp = 0
 			col.hp -= obj_player.gun_damage[obj_player.gun]
@@ -119,7 +119,7 @@ if (col_1 != noone || col_2 != noone || col_3 != noone){
 			ds_list_add(obj_text.text_life,0)
 			ds_list_add(obj_text.text_color,c_white)
 			ds_list_add(obj_text.text_dir,sign(xsp)*random(1))
-			sprite_index = spr_blood
+			sprite_index = spr_flash
 			xsp = 0
 			ysp = 0
 			col.hp -= obj_player.gun_damage[obj_player.gun]
@@ -137,7 +137,7 @@ if (col_1 != noone || col_2 != noone || col_3 != noone){
 if collided{
 	xsp = 0
 	ysp = 0
-	sprite_index = spr_spark
+	sprite_index = spr_flash
 	image_speed = 1
 	if !played_sound{
 		//var sound = audio_play_sound(snd_laser_hit_wall,0,0)

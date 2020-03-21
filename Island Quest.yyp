@@ -1114,7 +1114,7 @@
             "Key": "fe71dc11-da86-4752-ae9c-e5f2355d4203",
             "Value": {
                 "id": "db771ca9-8741-4bfb-b762-6a82600083ac",
-                "resourcePath": "sprites\\spr_flash_strip2\\spr_flash_strip2.yy",
+                "resourcePath": "sprites\\spr_flash\\spr_flash.yy",
                 "resourceType": "GMSprite"
             }
         }
