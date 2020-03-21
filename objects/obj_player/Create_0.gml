@@ -44,7 +44,7 @@ attack_cooldown = 0
 
 gun_frame = 0
 gun_animation_speed = .2
-gun_animation_max = 8
+gun_animation_max = 5
 gun_fired = false
 gun_shot = false
 

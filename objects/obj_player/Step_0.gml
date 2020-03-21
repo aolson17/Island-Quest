@@ -170,12 +170,12 @@ if gun_fired{
 		//var sound = audio_play_sound(snd_shotgun,0,0)
 		//audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 		xsp += lengthdir_x(-gun_knockback[gun],aim_dir)
-		ysp += lengthdir_y(-gun_knockback[gun]*.25,aim_dir)
+		//ysp += lengthdir_y(-gun_knockback[gun]*.25,aim_dir)
 		flash = true
 		alarm[1] = muzzle_flash_frames
 		var bullet = instance_create_layer(x+lengthdir_x(gun_length[gun],aim_dir),y+lengthdir_y(gun_length[gun],aim_dir),"Bullets",obj_bullet)
 		bullet.xsp = lengthdir_x(gun_bullet_speed[gun],aim_dir)+xsp
-		//bullet.ysp = lengthdir_y(gun_bullet_speed[gun],aim_dir)+ysp
+		bullet.ysp = lengthdir_y(gun_bullet_speed[gun],aim_dir)+ysp
 		bullet.image_angle = aim_dir
 	}
 	gun_frame += gun_animation_speed

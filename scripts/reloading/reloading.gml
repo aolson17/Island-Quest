@@ -1,6 +1,6 @@
 sprite_index = spr_captain_reloading
 mask_index = spr_captain_mask
-image_speed = .5
+image_speed = .8
 
 if prev_state != state{
 	image_index = 0
