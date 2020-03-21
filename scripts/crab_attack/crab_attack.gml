@@ -1,5 +1,5 @@
 sprite_index = spr_crabby_attack
-image_speed = .4
+image_speed = .6
 mask_index = spr_crabby_mask
 
 played_sound = false

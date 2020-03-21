@@ -1,7 +1,7 @@
 
 if state = crab_attack{
 	var mask = mask_index
-	if !(image_index >= 2 && image_index <= 12){
+	if !(image_index >= 2 && image_index <= 15){
 		exit
 	}
 	damage = 1
@@ -45,9 +45,6 @@ if state = crab_attack{
 			target.xsp = sign(target.x-x)*knockback
 			target.ysp = -3
 			target.hp -= damage
-			var success = true
-		}
-		if success{
 			obj_camera.shake += shake
 		}
 	}
