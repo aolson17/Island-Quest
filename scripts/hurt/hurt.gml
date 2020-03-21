@@ -33,21 +33,5 @@ if hp <= 0{
 
 if death && !did_death{
 	did_death = true
-	
-	var part = instance_create_layer(x,y,"Instances",obj_part)
-	part.sprite_index = spr_bone
-	var part = instance_create_layer(x,y,"Instances",obj_part)
-	part.sprite_index = spr_bone
-	var part = instance_create_layer(x,y,"Instances",obj_part)
-	part.sprite_index = spr_foot
-	var part = instance_create_layer(x,y,"Instances",obj_part)
-	part.sprite_index = spr_hand
-	var part = instance_create_layer(x,y,"Instances",obj_part)
-	part.sprite_index = spr_head
-	var part = instance_create_layer(x,y,"Instances",obj_part)
-	part.sprite_index = spr_hat
-	var part = instance_create_layer(x,y,"Instances",obj_part)
-	part.sprite_index = spr_coat
-	var part = instance_create_layer(x,y,"Instances",obj_part)
-	part.sprite_index = spr_captain_pants_air
+	scr_explode()
 }

@@ -6,7 +6,7 @@ if obj_player.on_ground{
 	follow_camera = false
 }
 
-if !obj_player.scope_key{
+if !obj_player.scope_key && !target.water_death{
 	
 	possible_new_target_y = target.y-25*obj_player.on_ground
 	
@@ -24,7 +24,7 @@ if !obj_player.scope_key{
 	if follow_camera{
 		target_y = (target.y+target.ysp*target_speed_factor)
 	}
-}else{
+}else if target.water_death || obj_player.scope_key{
 	if obj_player.gun_scope[obj_player.gun] = true && !global.in_dialogue{
 		var gun_scope_power_divisor = 0.03546113 + 5.304387*power(2.7183,(-0.08925988*obj_player.gun_scope_power[obj_player.gun]))
 		if obj_player.gamepad{

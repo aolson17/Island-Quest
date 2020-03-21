@@ -8,7 +8,7 @@ if invincible{
 	color_offset = c_red
 }
 
-if !death{
+if !death || (water_death && !did_death){
 	draw_sprite_ext(sprite_index,image_index,(x),round(y),image_xscale,image_yscale,image_angle,color_offset,image_alpha)
 	
 	if face = 1{

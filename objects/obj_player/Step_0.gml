@@ -205,7 +205,24 @@ if state = aiming{
 script_execute(state) // Manage which state is active
 
 applied_knockback = false
-if !death{
+if !death || (water_death && !did_death){
 	scr_collision()
 	scr_player_attacks()
+}
+
+if water_death{
+	sprite_index = spr_captain_hurt
+	if ysp < -3{
+		image_index = 0
+	}else{
+		image_index = 1
+	}
+	xsp = 0
+	if ysp > 0 && !did_death{
+		scr_explode()
+		did_death = true
+	}
+	if did_death{
+		ysp = 0
+	}
 }
