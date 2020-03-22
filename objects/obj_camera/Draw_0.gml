@@ -1,26 +1,54 @@
 
 
 
-var heart_y = y-height/2 + 10
-var heart_x1 = x-width/2+10
-var heart_x2 = x-width/2+20
-var heart_x3 = x-width/2+30
 
-draw_sprite(spr_HUD_heart,target.hp>0,heart_x1,heart_y)
-draw_sprite(spr_HUD_heart,target.hp>1,heart_x2,heart_y)
-draw_sprite(spr_HUD_heart,target.hp>2,heart_x3,heart_y)
 
 draw_set_font(global.font_small)
 
 var hud_text_x = x-width/2+2
 var hud_text_y = y-height/2 + 20
 
-draw_text(hud_text_x,hud_text_y,"Wave "+string(obj_waves.wave)+" out of "+string(obj_waves.wave_total))
+var bar_pos_x = x-sprite_get_width(spr_wavemeter)/2
+var bar_pos_y = y-height/2 + 20
+draw_set_halign(fa_center)
+draw_set_valign(fa_bottom)
+scr_draw_outline(x,bar_pos_y-2,"Distance To Island",global.text_color,c_black,1)
+//draw_text(x,bar_pos_y-2,"Distance To Island")
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+draw_sprite(spr_wavemeter,0,bar_pos_x,bar_pos_y)
+draw_set_color(make_color_rgb(160,65,13))
+var border_size = 4
+bar_pos_x += border_size
+bar_pos_y += border_size
+draw_rectangle(bar_pos_x,bar_pos_y,bar_pos_x+(sprite_get_width(spr_wavemeter)-border_size*2)*(obj_waves.wave/obj_waves.wave_total),bar_pos_y+sprite_get_height(spr_wavemeter)-border_size*2-1,false)
+
+
+draw_set_halign(fa_right)
+draw_set_valign(fa_bottom)
+scr_draw_outline(x+width/2-5,y-height/2 + 30,"Bullets Left: "+string(obj_player.bullets),global.text_color,c_black,1)
+draw_set_halign(fa_left)
+scr_draw_outline(x-width/2+5,y-height/2 + 30,"Health:",global.text_color,c_black,1)
+var heart_y = y-height/2 + 22
+var heart_x1 = x-width/2+53
+var heart_x2 = x-width/2+63
+var heart_x3 = x-width/2+73
+
+draw_sprite(spr_HUD_heart,target.hp>0,heart_x1,heart_y)
+draw_sprite(spr_HUD_heart,target.hp>1,heart_x2,heart_y)
+draw_sprite(spr_HUD_heart,target.hp>2,heart_x3,heart_y)
+
+
 if obj_waves.wave_wait{
-	draw_text(hud_text_x+80,hud_text_y,"Next Wave Soon!")
+	draw_set_halign(fa_center)
+	scr_draw_outline(x,y-height/2 + 42,"Next Wave Soon",global.text_color,c_black,1)
 }
-draw_text(hud_text_x,hud_text_y+40,"Enemies Left: "+string(obj_waves.enemies_left))
-draw_text(hud_text_x,hud_text_y+80,"Time: "+string(floor(obj_waves.seconds/60))+":"+string(obj_waves.seconds%60))
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+scr_draw_outline(x-width/2+5,y-height/2 + 8,"Time: "+string(floor(global.seconds/60))+":"+string(global.seconds%60),global.text_color,c_black,1)
+draw_set_halign(fa_right)
+scr_draw_outline(x+width/2-5,y-height/2 + 8,"Enemies Left: "+string(obj_waves.enemies_left),global.text_color,c_black,1)
+
 
 /*draw_sprite_ext(spr_hud,0,x-width/2,y-height/2,2,2,0,c_white,1)
 

@@ -2,6 +2,6 @@
 
 // In seconds
 
-seconds++
+global.seconds++
 
 alarm[1] = 60

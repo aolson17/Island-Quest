@@ -18,7 +18,7 @@ wave_wait = true
 alarm[0] = 60//wave_wait_frames
 wave = 0
 
-seconds = 0
+global.seconds = 0
 alarm[1] = 60
 
 enemies_left = 0

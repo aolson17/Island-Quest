@@ -43,7 +43,7 @@ if !death || (water_death && !did_death){
 		draw_sprite_ext(spr_player_head,0,head_pos_x,head_pos_y,image_xscale,image_yscale,image_angle,color_offset,image_alpha)
 	}*/
 	
-	if state = aiming{
+	if state = aiming && sprite_index = spr_captain_aim_down{
 		scr_draw_arm()
 	}
 	

@@ -1487,6 +1487,14 @@
             }
         },
         {
+            "Key": "f717b170-fc5a-462c-92a0-1fff2ab2ba92",
+            "Value": {
+                "id": "3f9d5b07-7577-4f82-b4dc-10b6aa4f5457",
+                "resourcePath": "sprites\\spr_wavemeter\\spr_wavemeter.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f8036dda-195e-46b3-99f1-0109a6e0b6e8",
             "Value": {
                 "id": "e0f7534b-6766-4e0d-ae3b-bf525e4a54b6",
