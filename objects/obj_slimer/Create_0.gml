@@ -31,7 +31,7 @@ move_friction = .3
 
 invincibility_frames = 15
 
-sight_range = 1500
+sight_range = 600
 sight_up = 110
 sight_down = 200
 

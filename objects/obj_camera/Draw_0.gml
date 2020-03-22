@@ -10,6 +10,18 @@ draw_sprite(spr_HUD_heart,target.hp>0,heart_x1,heart_y)
 draw_sprite(spr_HUD_heart,target.hp>1,heart_x2,heart_y)
 draw_sprite(spr_HUD_heart,target.hp>2,heart_x3,heart_y)
 
+draw_set_font(global.font_small)
+
+var hud_text_x = x-width/2+2
+var hud_text_y = y-height/2 + 20
+
+draw_text(hud_text_x,hud_text_y,"Wave "+string(obj_waves.wave)+" out of "+string(obj_waves.wave_total))
+if obj_waves.wave_wait{
+	draw_text(hud_text_x+80,hud_text_y,"Waiting for next wave to start")
+}
+draw_text(hud_text_x,hud_text_y+40,"Enemies Left: "+string(obj_waves.enemies_left))
+draw_text(hud_text_x,hud_text_y+80,"Time: "+string(floor(obj_waves.seconds/60))+":"+string(obj_waves.seconds%60))
+
 /*draw_sprite_ext(spr_hud,0,x-width/2,y-height/2,2,2,0,c_white,1)
 
 // Health bar

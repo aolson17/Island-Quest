@@ -1,5 +1,5 @@
 
-if object_index = obj_player{
+if object_index = obj_player || object_index = obj_part_eye{
 	stuck = false
 }
 
@@ -102,6 +102,11 @@ if place_meeting((x),(y+ysp),par_solid){
 			stuck = true
 			if alarm_get(3) <= 0{
 				alarm[3] = 20
+			}
+		}else if object_index = obj_part_eye{
+			stuck = true
+			if alarm_get(0) <= 0{
+				alarm[0] = 10
 			}
 		}
 	}
