@@ -177,6 +177,7 @@ if gun_fired{
 		bullet.xsp = lengthdir_x(gun_bullet_speed[gun],aim_dir)+xsp
 		bullet.ysp = lengthdir_y(gun_bullet_speed[gun],aim_dir)+ysp
 		bullet.image_angle = aim_dir
+		bullets--
 	}
 	gun_frame += gun_animation_speed
 	if gun_frame > gun_animation_max{
@@ -192,13 +193,13 @@ if state = run || state = stand{
 }
 
 if state = aiming{
-	if ((attack_key&&gun_auto[gun])||(attack_key_pressed&&!gun_auto[gun])) && can_shoot = 0 && shoot_key{
-		can_shoot += gun_fire_rate[gun]
-		gun_fired = true
-		gun_frame = 0
-		gun_shot = false
-		
-		
+	if bullets > 0{
+		if ((attack_key&&gun_auto[gun])||(attack_key_pressed&&!gun_auto[gun])) && can_shoot = 0 && shoot_key{
+			can_shoot += gun_fire_rate[gun]
+			gun_fired = true
+			gun_frame = 0
+			gun_shot = false
+		}
 	}
 }
 

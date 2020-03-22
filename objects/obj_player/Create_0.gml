@@ -5,6 +5,8 @@ hp = max_hp
 got_rifle = false
 got_shotgun = false
 
+bullets = 3
+
 dead_time_max = 90
 dead_time = dead_time_max
 played_death_sound = false

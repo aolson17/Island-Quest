@@ -17,7 +17,7 @@ var hud_text_y = y-height/2 + 20
 
 draw_text(hud_text_x,hud_text_y,"Wave "+string(obj_waves.wave)+" out of "+string(obj_waves.wave_total))
 if obj_waves.wave_wait{
-	draw_text(hud_text_x+80,hud_text_y,"Waiting for next wave to start")
+	draw_text(hud_text_x+80,hud_text_y,"Next Wave Soon!")
 }
 draw_text(hud_text_x,hud_text_y+40,"Enemies Left: "+string(obj_waves.enemies_left))
 draw_text(hud_text_x,hud_text_y+80,"Time: "+string(floor(obj_waves.seconds/60))+":"+string(obj_waves.seconds%60))

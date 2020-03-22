@@ -1,4 +1,8 @@
-sprite_index = spr_captain_aim_down
+if bullets > 0{
+	sprite_index = spr_captain_aim_down
+}else{
+	sprite_index = spr_captain
+}
 mask_index = spr_captain_mask
 image_speed = .2
 
