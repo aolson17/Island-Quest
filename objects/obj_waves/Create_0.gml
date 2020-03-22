@@ -1,8 +1,9 @@
 
+won = false
 
 wave_total = 2
-wave_wait_frames = 300
-sink_wait_frames = 160
+wave_wait_frames = 350
+sink_wait_frames = 200
 
 sinking = false
 moving = false
@@ -12,9 +13,6 @@ offset_x_r = 675
 
 move_frames_total = 350
 move_frames = 0
-
-sink_frames_total = 1000
-sink_frames = 0
 
 wave_wait = true
 alarm[0] = 60//wave_wait_frames

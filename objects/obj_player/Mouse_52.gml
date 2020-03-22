@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+/*
 elements = layer_get_all_elements("Zones_2");
 for (var i = 0; i < array_length_1d(elements); i++){
 	if (layer_get_element_type(elements[i]) == layerelementtype_instance){

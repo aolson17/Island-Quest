@@ -3,7 +3,9 @@ mask_index = spr_captain_mask
 image_speed = .6
 
 if prev_state != state{
-	alarm[8] = coyote_jump_frames // Start timer to end coyote jump ability
+	if alarm_get(8) > 0{
+		alarm[8] = coyote_jump_frames // Start timer to end coyote jump ability
+	}
 	image_index = 0
 }
 prev_state = state

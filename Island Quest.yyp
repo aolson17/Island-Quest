@@ -335,6 +335,14 @@
             }
         },
         {
+            "Key": "34dde26c-2a4e-4c7b-b85f-8bb79de18ea9",
+            "Value": {
+                "id": "4169f433-fcec-462e-bd38-a0ead56ee1b0",
+                "resourcePath": "sprites\\bg_water_2\\bg_water_2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "35d9dee2-2df3-4790-b8b7-aa7c4e59073c",
             "Value": {
                 "id": "c61adaf6-2190-403c-b474-65089deca4f4",
@@ -583,6 +591,14 @@
             }
         },
         {
+            "Key": "5eaaa454-4055-4e8e-8c49-ba28d97b86c2",
+            "Value": {
+                "id": "ecd2df6e-4f85-4f7d-a552-0ee0921d38fc",
+                "resourcePath": "sprites\\bg_water_3_strip3\\bg_water_3_strip3.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5f8d9d91-75c5-4e71-a152-7f95c7169bea",
             "Value": {
                 "id": "7372e27f-63df-46f3-8c52-c67c1e2b6551",
@@ -796,6 +812,14 @@
                 "id": "b8bb369b-26fe-41e7-9995-df4c19abe007",
                 "resourcePath": "tilesets\\ts_ship\\ts_ship.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "84f62c46-1388-45c1-a41c-d8aec17899a4",
+            "Value": {
+                "id": "868f989d-774f-4c76-ac22-7e782a8920b9",
+                "resourcePath": "sprites\\bg_water\\bg_water.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

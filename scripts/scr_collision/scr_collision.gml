@@ -26,12 +26,6 @@ if place_meeting((x+xsp),(y),par_solid){
 			//x += sign(x-col.x)
 		}
 	}
-	if col.xsp != 0 || col.ysp != 0{
-		col.xsp = 0
-		col.ysp = 0
-		//xsp = 0
-		//ysp = 0
-	}
 	var limit = abs(xsp)
 	while(!place_meeting((x+sign(xsp)*.01),(y),par_solid) && limit > 0){
 		x += sign(xsp)*.01
@@ -80,12 +74,6 @@ if place_meeting((x),(y+ysp),par_solid){
 				exit
 			}
 		}
-	}
-	if col.xsp != 0 || col.ysp != 0{
-		col.xsp = 0
-		col.ysp = 0
-		//xsp = 0
-		//ysp = 0
 	}
 	var limit = abs(ysp)
 	while(!place_meeting((x),(y+sign(ysp)),par_solid) && limit > 0){

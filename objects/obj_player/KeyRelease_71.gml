@@ -1,3 +1,3 @@
 /// @description Enable Gamepad For This Player
 
-gamepad = !gamepad
+//gamepad = !gamepad
