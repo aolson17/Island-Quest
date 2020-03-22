@@ -9,7 +9,7 @@ hit_mask = spr_crabby_mask
 
 event_inherited()
 
-damage = 10
+damage = 1
 
 xsp = 0
 ysp = 0

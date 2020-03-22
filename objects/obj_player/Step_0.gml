@@ -173,7 +173,7 @@ if gun_fired{
 		//ysp += lengthdir_y(-gun_knockback[gun]*.25,aim_dir)
 		flash = true
 		alarm[1] = muzzle_flash_frames
-		var bullet = instance_create_layer(x+lengthdir_x(gun_length[gun],aim_dir),y+lengthdir_y(gun_length[gun],aim_dir),"Bullets",obj_bullet)
+		var bullet = instance_create_layer(x+lengthdir_x(gun_length[gun],aim_dir),y+2+lengthdir_y(gun_length[gun],aim_dir),"Bullets",obj_bullet)
 		bullet.xsp = lengthdir_x(gun_bullet_speed[gun],aim_dir)+xsp
 		bullet.ysp = lengthdir_y(gun_bullet_speed[gun],aim_dir)+ysp
 		bullet.image_angle = aim_dir
