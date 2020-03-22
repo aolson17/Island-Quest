@@ -66,9 +66,9 @@ if target != noone{
 	}
 }
 
-if state != dead_state{
+//if state != dead_state{
 	scr_collision()
-	if distance_to_object(target) < 2{
+	if distance_to_object(target) < 4{
 		damage = 1
 		knockback = 3
 		shake = 12
@@ -88,11 +88,11 @@ if state != dead_state{
 			obj_camera.shake += shake
 		}
 	}
-}else{
+/*}else{
 	x += xsp
-	if ysp < 0{
+	//if ysp < 0{
 		y += ysp
-	}
+	//}
 }
 
 

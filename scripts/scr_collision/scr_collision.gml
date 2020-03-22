@@ -1,4 +1,8 @@
 
+if object_index = obj_player{
+	stuck = false
+}
+
 if place_meeting((x+xsp),(y),par_solid){
 	var col = instance_place((x+xsp),(y),par_solid)
 	if object_is_ancestor(object_index, par_player){
@@ -94,6 +98,12 @@ if place_meeting((x),(y+ysp),par_solid){
 	}
 	if place_meeting(x,y,par_solid){
 		y--
+		if object_index = obj_player{
+			stuck = true
+			if alarm_get(3) <= 0{
+				alarm[3] = 20
+			}
+		}
 	}
 	ysp = 0
 }else{

@@ -1,5 +1,5 @@
 sprite_index = spr_slimer_hurt
-image_speed = .6
+image_speed = .8
 mask_index = spr_slimer_mask
 
 if prev_state != state{
