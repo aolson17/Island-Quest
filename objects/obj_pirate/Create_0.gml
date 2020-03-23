@@ -1,11 +1,11 @@
 
 
-state = crab_stand
+state = pirate_stand
 
-dead_state = crab_die
-stagger_state = crab_stagger
+dead_state = pirate_die
+stagger_state = pirate_fall
 
-hit_mask = spr_crabby_mask
+hit_mask = spr_pirate_mask
 
 event_inherited()
 
@@ -14,14 +14,14 @@ damage = 1
 xsp = 0
 ysp = 0
 
-max_hp = 2
+max_hp = 4
 hp = max_hp
 
 hp_width = 30
 
-attack_distance = 30
+attack_distance = 18
 
-run_speed = .02
+run_speed = .1
 max_run_speed = 1.5
 
 air_move_factor = .2
@@ -31,6 +31,9 @@ max_stair_speed = max_run_speed*.5
 step_size = 4
 
 grav_speed = .3
+
+attack_cooldown_frames = 20
+attack_cooldown = 0
 
 move_friction = .1
 

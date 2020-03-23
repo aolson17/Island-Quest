@@ -24,7 +24,7 @@ attack_distance = 30
 run_speed = .02
 max_run_speed = 1.5
 
-air_move_factor = .2
+air_move_factor = 0
 
 max_stair_speed = max_run_speed*.5
 
@@ -40,7 +40,7 @@ invincibility_frames = 15
 
 sight_range = 500
 sight_up = 110
-sight_down = 20
+sight_down = 80
 
 invincible = false
 

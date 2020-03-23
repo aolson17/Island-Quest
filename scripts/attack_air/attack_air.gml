@@ -13,8 +13,8 @@ if !place_meeting(x,y+1,par_solid){ // If in air
 	
 	if round(image_index) >= 1 && !played_sound{
 		played_sound = true
-		//var sound = audio_play_sound(snd_shotgun,0,0)
-		//audio_sound_gain(sound,global.master_volume*global.sound_volume*.55,0)
+		var sound = audio_play_sound(WeaponsSword_generic_swing_2,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.55,0)
 	}
 	if image_index > image_number-1{
 		state = fall

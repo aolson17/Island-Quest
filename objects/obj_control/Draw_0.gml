@@ -31,7 +31,7 @@ if obj_player.gun_scope[obj_player.gun] && obj_player.scope_key && !global.in_di
 
 #endregion
 
-draw_sprite(spr_cursor,0,cursor_x,cursor_y)
+draw_sprite(spr_cursor,mouse_check_button(mb_left),cursor_x,cursor_y)
 
 /*
 var target_inaccuracy = obj_player.gun_accuracy[obj_player.gun]+obj_player.current_recoil+obj_player.current_gun_backwards_accuracy_offset

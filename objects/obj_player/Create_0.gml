@@ -32,10 +32,10 @@ roll_speed = 5 // How much speed gained from roll
 
 jump_speed = 6
 variable_jump_factor = .5
-
+	
 run_image_speed_factor = .4 // How much run speed effects the animation speed
 
-invincibility_frames = 15
+invincibility_frames = 40
 invincible = false
 
 slide_cooldown_frames = 60

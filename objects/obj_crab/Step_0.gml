@@ -102,7 +102,10 @@ if move = sign(xsp) && move != 0 && place_meeting(x,y+1,par_solid){
 	face = -move
 }
 
-if state != crab_die{
+if state != crab_die && state != crab_launch{
+	if place_meeting(x,y,obj_water){
+		state = crab_die
+	}
 	scr_collision()
 	scr_crab_attacks()
 }else{

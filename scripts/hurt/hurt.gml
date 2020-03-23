@@ -2,6 +2,10 @@ sprite_index = spr_captain_hurt
 mask_index = spr_captain_mask
 image_speed = .3
 
+if hp <= 0{
+	mask_index = spr_captain_hurt
+}
+
 if prev_state != state{
 	image_index = 0
 	instance_create_layer(x+face*6,y-4,"Bullets",obj_heart_crack)
@@ -25,6 +29,12 @@ if !place_meeting(x,y+1,par_solid){ // If in air
 	image_xscale = face
 }
 
+if place_meeting(x+xsp,y+ysp,par_solid){
+	if hp <= 0{
+		death = true
+	}
+}
+
 if hp <= 0{
 	if distance_to_object(obj_camera) > 300{
 		death = true
@@ -33,5 +43,8 @@ if hp <= 0{
 
 if death && !did_death{
 	did_death = true
+	var sound = audio_play_sound(PlayerDeath_body_shatters,0,0)
+	audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 	scr_explode()
+	alarm[4] = 50
 }

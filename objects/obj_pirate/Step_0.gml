@@ -20,7 +20,7 @@ if instance_number(obj_player)>0{
 	}
 }
 
-if state != crab_attack && state != stagger_state && state != dead_state && state != crab_defend && target != noone{
+if state != pirate_attack && state != stagger_state && state != dead_state && target != noone{
 	if target.x < x{
 		move = -1
 	}else if target.x > x{
@@ -29,16 +29,19 @@ if state != crab_attack && state != stagger_state && state != dead_state && stat
 		move = 0
 	}
 	if distance_to_object(target) < attack_distance{
-		if state = crab_stand{
+		if state = pirate_stand{
 			if target.x < x{
-				face = 1
-			}else if target.x > x{
 				face = -1
+			}else if target.x > x{
+				face = 1
 			}
 		}
-		if target.state != knocked && target.y < y - 40{
-			state = crab_attack
-			image_index = 0
+		if target.state != knocked{
+			if attack_cooldown <= 0{
+				attack_cooldown = attack_cooldown_frames
+				state = pirate_attack
+				image_index = 0
+			}
 		}else if target.state = knocked{
 			move = 0
 		}
@@ -47,8 +50,14 @@ if state != crab_attack && state != stagger_state && state != dead_state && stat
 	move = 0
 }
 
+if state = pirate_stand || state = pirate_run{
+	if attack_cooldown>0{
+		attack_cooldown--
+	}
+}
+
 if place_meeting(x,y+1,par_solid){
-	if state = crab_attack{
+	if state = pirate_attack{
 		move = 0
 		move_speed = 0
 		max_move_speed = 0
@@ -71,7 +80,7 @@ if move = sign(xsp){ // If trying to move in the same direction as momentum
 
 
 
-if !place_meeting(x,y+1,par_solid) || state = crab_die{ // Apply gravity
+if !place_meeting(x,y+1,par_solid){ // Apply gravity
 	ysp += grav_speed
 }else{ // If on ground
 	if move != sign(xsp) || abs(xsp) > max_move_speed{ // Apply friction
@@ -99,19 +108,17 @@ if !place_meeting(x,y+1,par_solid) || state = crab_die{ // Apply gravity
 script_execute(state) // Manage which state is active
 
 if move = sign(xsp) && move != 0 && place_meeting(x,y+1,par_solid){
-	face = -move
+	face = move
 }
 
-if state != crab_die{
-	scr_collision()
-	scr_crab_attacks()
-}else{
-	x += xsp
-	y += ysp
-	xsp*=.98
+scr_collision()
+if state != pirate_die{
+	scr_pirate_attacks()
 }
 
-
+if place_meeting(x,y,obj_water){
+	state = pirate_die
+}
 
 
 

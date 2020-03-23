@@ -17,8 +17,8 @@ if !place_meeting(x,y+1,par_solid){ // If in air
 	
 	face = image_xscale
 }else{ // If on ground
-	//var sound = audio_play_sound(snd_landing,0,0)
-	//audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
+	var sound = audio_play_sound(Player_landing,0,0)
+	audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 	if xsp = 0{
 		state = stand
 	}else{

@@ -41,6 +41,10 @@ if on_ground{
 	max_move_speed = max_run_speed
 }
 
+if hp <= 0{
+	move = 0
+}
+
 if move = sign(xsp){ // If trying to move in the same direction as momentum
 	if abs(xsp) <= max_move_speed{ // If not already over limit
 		xsp += move * move_speed
@@ -167,8 +171,8 @@ if gun_fired{
 	if !gun_shot && gun_frame >= 4{
 		gun_shot = true
 		obj_camera.shake += 6
-		//var sound = audio_play_sound(snd_shotgun,0,0)
-		//audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
+		var sound = audio_play_sound(WeaponsGun_explosive_pop,0,0)
+		audio_sound_gain(sound,global.master_volume*global.sound_volume*.8,0)
 		xsp += lengthdir_x(-gun_knockback[gun],aim_dir)
 		//ysp += lengthdir_y(-gun_knockback[gun]*.25,aim_dir)
 		flash = true

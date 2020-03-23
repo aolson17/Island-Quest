@@ -1,3 +1,8 @@
 /// @description Restart Room
 
-room_restart()
+//room_restart()
+
+
+//var transition = instance_create_layer(x,y,"Cursor",obj_transition)
+//transition.room_target = room
+

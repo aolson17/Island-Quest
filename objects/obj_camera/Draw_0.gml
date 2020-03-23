@@ -47,7 +47,7 @@ draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 scr_draw_outline(x-width/2+5,y-height/2 + 8,"Time: "+string(floor(global.seconds/60))+":"+string(global.seconds%60),global.text_color,c_black,1)
 draw_set_halign(fa_right)
-scr_draw_outline(x+width/2-5,y-height/2 + 8,"Enemies Left: "+string(obj_waves.enemies_left),global.text_color,c_black,1)
+//scr_draw_outline(x+width/2-5,y-height/2 + 8,"Enemies Left: "+string(obj_waves.enemies_left),global.text_color,c_black,1)
 
 
 /*draw_sprite_ext(spr_hud,0,x-width/2,y-height/2,2,2,0,c_white,1)
